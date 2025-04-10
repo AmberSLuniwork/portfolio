@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    //mobile menu functionality.
+
+    function toggleMenu() {
+        const navList = document.querySelector('.mobile-nav');
+        
+        navList.classList.toggle('active');
+    }
+
+    document.addEventListener('click', function (event) {
+        // Check if the clicked element is the arrow
+        if (event.target && event.target.id === 'arrow') {
+            toggleMenu();
+        }
+    });
     
     document.body.addEventListener('click', function(event) {
         // Check if the clicked element is partytime

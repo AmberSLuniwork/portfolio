@@ -16,12 +16,12 @@ main{
     display: flex;
     flex-grow: 1;
 }
-/*Nav*/
-nav{
+/*desktop nav*/
+.desktop-nav{
     display: flex;
     align-items: center;
 }
-nav ul{
+.desktop-nav ul{
     list-style-type: none;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@ nav ul{
     padding: 0;
     margin: 0;
 }
-nav ul li{
+.desktop-nav ul li{
     display: inline;
 }
 .dropdown{
@@ -45,13 +45,31 @@ nav ul li{
     z-index: 1;
     /* Animation stuff */
     opacity: 0; 
-    transform: translateY(-10px);
+    transform: translateY(10px);
     transition: opacity 0.2s ease, transform 0.1s ease;
 }
 .dropdown:hover .dropcontent {
     display: block;
     opacity: 1; /* Make it visible */
-    transform: translateY(0); /* Slide into place */
+    transform: translateY(0);
+}
+/*Mobile nav*/
+.mobile-nav{
+    display: none;
+    width: 0px;
+}
+.mobile-nav.active {
+    display: flex;
+    width: 100%;
+    right: 0;
+    transition: transform 0.3s ease
+}
+.mobile-nav ul li{
+    color: #F9F9F9;
+}
+#arrow.active{
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
 }
 /*footer stuff*/
 footer{
@@ -94,9 +112,9 @@ footer ul li a:hover {
 /*splodge plus animations*/
 #splodge {
     position: absolute;
-    top: -80px;
-    right: -150px;
-    width: 900px;
+    top: -200px;
+    right: -100px;
+    width: 1000px;
     height: auto;
     z-index: -10;
 
@@ -115,7 +133,7 @@ footer ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    height: 80vh;
+    height: 60vh;
     padding: 2rem;
     overflow: hidden;
 }
@@ -126,17 +144,14 @@ footer ul li a:hover {
     max-width: 600px;
     font-size: 1.8rem;
     margin-left: 10%;
+    margin-top: -20px
 }  
 #taglineheader {
-    font-size: 2.2rem;
+    font-size: 4rem;
     margin: 0 0 1rem;
 }
-#tagline {
-    margin: 0;
-    margin-left: 1.8em;
-}
 /*Text*/
-h1, h2, h3, h4, h5, #logo, nav ul li{
+h1, h2, h3, h4, h5, #logo, nav ul li, p.mobile-list{
     font-family: "Maitree", "Times New Roman";
     color: #003B4F;
 }
@@ -152,7 +167,24 @@ h1, h2, h3, h4, h5, #logo, nav ul li{
     font-weight: bolder;
     font-size: 1.5em;
 }
-nav ul li a, .dropbutton{
+nav ul li a, p.dropbutton{
+    font-size: 1.1em;
+    font-weight: bolder;
+    text-decoration: none;
+    color: #003B4F;
+}
+nav .dropcontent a{
+    color: #F9F9F9;
+}
+nav .dropcontent a:hover{
+    color: #FFD6B1;
+}
+nav ul li a:hover{
+    transform: scale(1.1);
+    transition: 0.25s ease;
+    color: #146881;
+}
+.homeheader nav ul li a, p.dropbutton{
     font-size: 1.1em;
     font-weight: bolder;
     color: #f9f9f9;
@@ -161,7 +193,7 @@ nav ul li a, .dropbutton{
 div.dropcontent{
     font-size: .9em;
 }
-nav ul li a:hover{
+.homeheader ul li a:hover{
     transform: scale(1.1);
     color: #FFD6B1;
     transition: 0.25s ease;
@@ -174,6 +206,9 @@ p, footer{
 }
 /*Media queries*/
 @media (max-width: 600px) {
+    body{
+        overflow-x: hidden;
+    }
     header {
         background-color: #21BAC6; /* Use the splodge's color as background */
     }
@@ -183,9 +218,53 @@ p, footer{
     .tagline{
         margin-left: 0em;
     }
+    .mobile-nav-toggle{
+        display: block!important;
+    }
+    .desktop-nav{
+        display: none;
+    }
+    .hero{
+        height: 50vh;
+    }
+    .mobile-nav{
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        background-color: #003b4fce;
+        position: absolute;
+        top: 130px; 
+        right: -100%; /* Initially offscreen */
+        width: 300px;  /*width of the sliding menu */
+        height: 100%;
+        text-align: center;
+        transition: right 0.3s ease; /* transition for smooth sliding */
+        overflow-x: hidden;
+    }
+    .mobile-nav li p.mobile-list, .mobile-nav li a{
+        color: #F9F9F9;
+        font-weight: bold;
+    }
+    p.mobile-list{
+        border-bottom: 2px dashed #F9F9F9;
+    }
+    .mobile-nav li a:hover{
+        color: #FFD6B1;
+    }
+    
 }
-/*image stuffs*/
+/*images*/
 #linkedin{
     height: 25px;
     width: auto;
+}
+/*buttons*/
+.mobile-nav-toggle{
+    display: none;
+
+    font-size: 40px;
+    color: #F9F9F9;
+    background: none;
+    border: none;
+    cursor: pointer;
 }

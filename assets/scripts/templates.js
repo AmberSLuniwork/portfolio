@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (header) {
         header.innerHTML = `
         <a id="logo" href="index.html">Amber <br> Sudworth</p></a>
-        <nav>
+        <nav class="desktop-nav">
             <ul class="nav-list">
                 <li>
                     <a href=aboutme.html>About</a>
                 </li>
                 <li class="dropdown">
-                    <p class="dropbutton">My Projects&#x25BE</p>
+                    <p class="dropbutton">Projects&#x25BE</p>
                     <div class="dropcontent">
                         <a href="largetask.html">Aurum Landscapes</a>
                         <br>
@@ -23,6 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
                 <li>
                     <a href=contact.html>Contact me</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="mobile-nav-toggle" id="arrow">&#x25C2;</button>
+        <nav class="mobile-nav">
+        <br>
+            <ul class="nodeco">
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="aboutme.html">About</a>
+                </li>
+                <li>
+                    <p class=mobile-list>Projects</p>
+                    <section>
+                        <a href="largetask.html">Aurum Landscapes</a>
+                        <br>
+                        <a href="smalltask.html">Fictional perfume</a>
+                        <br>
+                        <a href="endyearproject.html"> Final year project</a>
+                    </section>
                 </li>
             </ul>
         </nav>
