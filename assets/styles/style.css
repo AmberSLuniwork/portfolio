@@ -1,10 +1,14 @@
 *{
     padding: 0;
     margin: 0;
+    text-decoration: none;
 }
-body{
-    background-color: #F9F9F9;
-    overflow-x: hidden;
+.banner{
+    background-size: cover;
+    background-image: url(/assets/images/indexbanner/topwave.svg);
+    height: 50vw;
+    padding:25px 5%;
+    margin:0;
 }
 header{
     display: flex;
@@ -12,87 +16,103 @@ header{
     padding: 25px 5%;
     z-index: 10;
 }
+.homeheader{
+    float: right;
+    padding: 15px 0;
+}
+body{
+    perspective: 20px;
+    background-color: #FBEEDD;
+    overflow-x: hidden;
+}
 main{
-    display: flex;
-    flex-grow: 1;
+    padding: 25px 5%;
 }
 /*desktop nav*/
-.desktop-nav{
+#desktopnav{
     display: flex;
     align-items: center;
+    text-decoration: none;
+    font-weight: 500;
 }
-.desktop-nav ul{
+#desktopnav ul{
+    align-items: center;
     list-style-type: none;
     display: flex;
-    align-items: center;
     gap: 10px;
     padding: 0;
     margin: 0;
 }
-.desktop-nav ul li{
+#desktopnav li, #desktopnav li a:not(#contactbutton a){
+    color: #B01E68;
     display: inline;
+    padding: 5px;
 }
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-.dropcontent{
-    position: absolute;
-    background-color: #003B4F;
-    padding: 10px;
-    min-width: 200px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    /* Animation stuff */
-    opacity: 0; 
-    transform: translateY(10px);
-    transition: opacity 0.2s ease, transform 0.1s ease;
-}
-.dropdown:hover .dropcontent {
-    display: block;
-    opacity: 1; /* Make it visible */
-    transform: translateY(0);
+#desktopnav li p{
+    font-family: "Shrikhand", "Times New Roman";
 }
 /*Mobile nav*/
-.mobile-nav{
+.mobilenav{
     display: none;
     width: 0px;
 }
-.mobile-nav.active {
-    display: flex;
-    width: 100%;
-    right: 0;
-    transition: transform 0.3s ease
+.mobilenav.active {
+    transform: translateX(0); /* slide into view */
+    box-shadow: #17002f79 -10px -10px 20px
 }
-.mobile-nav ul li{
+.mobilenav ul li{
     color: #F9F9F9;
 }
-#arrow.active{
-    transform: rotate(180deg);
-    transition: transform 0.3s ease;
+/*Collapsible menus for jump links*/
+
+/*Containers*/
+.twocolumn{
+    display: flex;
+    gap: 25px;
+}
+section{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+/*Responsive youtube embeds*/
+.videocontainer{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 25%;
+}
+iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
 /*footer stuff*/
 footer{
     justify-content: space-between;
     display: flex;
     padding: 25px 5%;
-    background-color: #003B4F;
-    color: #FFD6B1;
+    background-color: #660076;
+    color: #FBEEDD;
     align-items: center;
+    text-decoration: none;
 }
-
+footer a{
+    color: #FBEEDD;
+}
 footer li{
     padding: 5px;
-}
-footer ul li a{
-    text-decoration: none;
-    color: #FFD6B1;
+    color: #FBEEDD;
 }
 footer ul li a:hover {
     color: #f9f9f9;
     font-weight: bold;
 }
-/*Party mode*/
+/*Party mode - commented out because it's a fun extra. will make if i have time.
 #partytime{
     cursor: pointer;
 }
@@ -102,156 +122,135 @@ footer ul li a:hover {
 #discoBall {
     width: 350px;
     height: auto;
-    display: none; /* Initially hidden */
-    position: fixed; /* Fixed positioning relative to the viewport */
-    top: -600px; /* Start above the screen */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust positioning to center it */
-    z-index: 9999; /* Ensure it stays on top of other content */
+    position: fixed;
+    top: -600px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
 }
-/*splodge plus animations*/
-#splodge {
-    position: absolute;
-    top: -200px;
-    right: -100px;
-    width: 1000px;
-    height: auto;
-    z-index: -10;
-
-    animation: spin 180s linear infinite;
-}
-@keyframes spin{
-    from{
-        transform: rotate(0deg);
-    } to {
-        transform: rotate(360deg);
-    }
-}
-/*index hero section*/
-.hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 60vh;
-    padding: 2rem;
-    overflow: hidden;
-}
-
-.herotext {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
-    font-size: 1.8rem;
-    margin-left: 10%;
-    margin-top: -20px
-}  
-#taglineheader {
-    font-size: 4rem;
-    margin: 0 0 1rem;
+*/
+#discoBall{
+    display: none;
 }
 /*Text*/
-h1, h2, h3, h4, h5, #logo, nav ul li, p.mobile-list{
-    font-family: "Maitree", "Times New Roman";
-    color: #003B4F;
+/*font families*/
+#desktopnav ul, #desktopnav li p, #contactbutton a{
+    font-family: 'shrikhand';
 }
-.footer-nav li h2{
-    color: #FFD6B1;
+h1, h2, h3, h4, h5, button{
+    font-family: "quicksand", "Times New Roman";
 }
-.dropbutton{
-    font-family: "Maitree", "Times New Roman";
+p, a, footer{
+    font-family: "Zain", "Verdana";
 }
-#logo{
-    color: #003B4F;
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: 1.5em;
+/*font sizes*/
+.huge{
+    font-size: 5rem;
+    margin-bottom: 10px;
 }
-nav ul li a, p.dropbutton{
-    font-size: 1.1em;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #003B4F;
+@media screen and (max-width:480px) {
+    .huge{
+        font-size: 10vw;
+    }
 }
-nav .dropcontent a{
-    color: #F9F9F9;
+h1, .big{
+    font-size: 3rem;
 }
-nav .dropcontent a:hover{
-    color: #FFD6B1;
+h2, #logo{
+    font-size: 2.5rem;
 }
-nav ul li a:hover{
-    transform: scale(1.1);
-    transition: 0.25s ease;
-    color: #146881;
+h3{
+    font-size: 2rem;
 }
-.homeheader nav ul li a, p.dropbutton{
-    font-size: 1.1em;
-    font-weight: bolder;
-    color: #f9f9f9;
-    text-decoration: none;
+h4, .big-ish, #contactbutton{
+    font-size: 1.7rem
 }
-div.dropcontent{
-    font-size: .9em;
+h5{
+    font-size: 1.4rem
 }
-.homeheader ul li a:hover{
-    transform: scale(1.1);
-    color: #FFD6B1;
-    transition: 0.25s ease;
+p, .normal, footer{
+    font-size: 1.3rem;
 }
-p, footer{
-    font-family: "Raleway", "Verdana";
+.small{
+    font-size: 1rem;
 }
-.nodeco{
+/*colors*/
+h2, h3, h4, h5{
+    color: #D40C72;
+}
+h1{
+    color: #B01E68;
+}
+.gradient{
+    align-self: center;
+    font-family: 'Shrikhand'!important;
+    background:linear-gradient(
+        to right,
+        #660076,
+        #D40C72,
+        #f87016,
+        #D40C72,
+        #660076
+    );
+    background-clip: text;
+    color: transparent!important;
+    background-size: 200% auto;
+}
+/*text or list decos*/
+.nodecolist{
     list-style: none;
 }
+.nodecotext, footer li a{
+    text-decoration: none;
+}
+
 /*Media queries*/
-@media (max-width: 600px) {
+@media (max-width: 660px) {
     body{
         overflow-x: hidden;
     }
-    header {
-        background-color: #21BAC6; /* Use the splodge's color as background */
-    }
-    .herotext{
-        margin-left: 0;
-    }
-    .tagline{
-        margin-left: 0em;
-    }
-    .mobile-nav-toggle{
+    #hamburger{
         display: block!important;
     }
-    .desktop-nav{
+    #desktopnav{
         display: none;
     }
     .hero{
         height: 50vh;
     }
-    .mobile-nav{
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        background-color: #003b4fce;
-        position: absolute;
-        top: 130px; 
-        right: -100%; /* Initially offscreen */
-        width: 300px;  /*width of the sliding menu */
-        height: 100%;
-        text-align: center;
-        transition: right 0.3s ease; /* transition for smooth sliding */
-        overflow-x: hidden;
-    }
-    .mobile-nav li p.mobile-list, .mobile-nav li a{
+    .mobilenav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    background-color: #f38b04;
+    display: flex;
+    flex-direction: column;
+    padding:60px 10% 10px 20px;
+    gap: 50px;
+    transform: translateX(100%); /* hidden off-screen */
+    transition: transform 0.3s ease-in-out;
+}
+    .mobilenav li p.mobile-list, .mobilenav li a{
         color: #F9F9F9;
         font-weight: bold;
     }
     p.mobile-list{
         border-bottom: 2px dashed #F9F9F9;
     }
-    .mobile-nav li a:hover{
+    .mobilenav li a:hover{
         color: #FFD6B1;
     }
-    
+    .twocolumn{
+        flex-direction: column;
+    }
+    .videocontainer{
+        padding-top: 75%;
+    }
+    footer{
+        flex-direction: column-reverse;
+    }
 }
 /*images*/
 #linkedin{
@@ -259,12 +258,56 @@ p, footer{
     width: auto;
 }
 /*buttons*/
-.mobile-nav-toggle{
+#hamburger{
     display: none;
-
-    font-size: 40px;
-    color: #F9F9F9;
+    color: #B01E68;
     background: none;
     border: none;
     cursor: pointer;
+}
+#removenav{
+    text-align: right;
+    color: #FBEEDD;
+    font-weight:900;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+#contactbutton{
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: none;
+    background:#D40C72;
+    background-size: 200% auto;
+}
+#contactbutton a{
+    color: #FBEEDD;
+}
+.collapsible{
+    font-weight: bold;
+    background-color: #F49D1A;
+    color: #FBEEDD;
+    cursor: pointer;
+    margin-left: 5%;
+    padding: 25px;
+    min-width: 300px;
+    max-width: 600px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+.active, .collapsible:hover {
+    background-color:#f38b04;
+}
+.collapsiblecontent {
+    margin-left: 5%;
+    padding: 0 25px;
+    min-width: 300px;
+    max-width: 600px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.25s ease-out;
+    background-color: #f38b0475;
 }

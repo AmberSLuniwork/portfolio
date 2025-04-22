@@ -1,0 +1,36 @@
+#logo:hover{
+    transform: scale(1.05);
+    transition: all 0.1s 0s ease;
+}
+#desktopnav li:hover, #desktopnav li a:hover:not(#contactbutton a){
+    color: #D40C72;
+    transform: scale(1.1);
+    transition: all 0.1s 0s ease;
+    text-shadow: #17002fad 0px 0px 10px;
+}
+#contactbutton:hover{
+    box-shadow: #17002fad 0px 0px 10px;
+    background-image:linear-gradient(
+        to left,
+        #660076,
+        #D40C72,
+        #f87016,
+        #D40C72,
+        #660076
+    );
+    transition:transform .2s ease-in-out;
+    animation: gradientMove 2s linear infinite;
+}
+.gradient{
+    transition:transform .2s ease-in-out;
+    animation: gradientMove 20s linear infinite;
+}
+
+@keyframes gradientMove{
+    0%{
+        background-position: 200% 50%;
+    }
+    100%{
+        background-position: 0% 50%
+    }
+}

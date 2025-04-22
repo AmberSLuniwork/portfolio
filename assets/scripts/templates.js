@@ -4,47 +4,35 @@
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header"); // Selects the existing <header> element
     if (header) {
+        const isHome = window.location.pathname.endsWith("index.html") || window.location.pathname === "/";
+
         header.innerHTML = `
-        <a id="logo" href="index.html">Amber <br> Sudworth</p></a>
-        <nav class="desktop-nav">
-            <ul class="nav-list">
+        ${!isHome ? `<a id="logo" class="big-ish gradient nodeco" href="index.html">Amber Sudworth</p></a>` : ""}
+        <nav id="desktopnav" class="big-ish">
+            <ul class="nodecolist">
                 <li>
                     <a href=aboutme.html>About</a>
                 </li>
-                <li class="dropdown">
-                    <p class="dropbutton">Projects&#x25BE</p>
-                    <div class="dropcontent">
-                        <a href="largetask.html">Aurum Landscapes</a>
-                        <br>
-                        <a href="smalltask.html">Fictional perfume</a>
-                        <br>
-                        <a href="endyearproject.html"> Final year project</a>
-                    </div>
+                <li>
+                    <a href="projects.html">Projects</a>
                 </li>
                 <li>
-                    <a href=contact.html>Contact me</a>
+                    <button id="contactbutton"><a href="contact.html">Contact</a></button>
                 </li>
             </ul>
         </nav>
-        <button class="mobile-nav-toggle" id="arrow">&#x25C2;</button>
-        <nav class="mobile-nav">
-        <br>
-            <ul class="nodeco">
+        <button id="hamburger" class="big">&#9776;</button>
+        <nav class="mobilenav">
+            <button id="removenav" class="huge">&times;</button>
+            <ul class="nodecolist big">
                 <li>
                     <a href="contact.html">Contact</a>
                 </li>
                 <li>
-                    <a href="aboutme.html">About</a>
+                    <a href="projects.html">Projects</a>
                 </li>
                 <li>
-                    <p class=mobile-list>Projects</p>
-                    <section>
-                        <a href="largetask.html">Aurum Landscapes</a>
-                        <br>
-                        <a href="smalltask.html">Fictional perfume</a>
-                        <br>
-                        <a href="endyearproject.html"> Final year project</a>
-                    </section>
+                    <a href="aboutme.html">About</a>
                 </li>
             </ul>
         </nav>
@@ -54,19 +42,26 @@ document.addEventListener("DOMContentLoaded", function () {
     if (footer) {
         footer.innerHTML = `
         <section>
-            <ul class="nodeco">
+            <ul class="nodecolist">
+                <li class="big-ish">Quick Links</li>
                 <li>
-                    <a href=#logo>Back to top</a>
+                    <a href=aboutme.html>About</a>
                 </li>
-                <li id="partytime">
-                    Party mode?
+                <li>
+                    <a href=services.html>Projects</a>
+                </li>
+                <li>
+                    <a href=contact.html>Contact</a>
                 </li>
             </ul>
         </section>
         <section>
-            <ul class="nodeco">
+            <ul class="nodecolist">
                 <li>
-                    <p> Made by Amber Sudworth © 2025.</p> <br>
+                    <a href=#desktopnav class="big-ish">&#11205 Back to top</a>
+                </li>
+                <li>
+                    Made by Amber Sudworth © 2025.
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/amber-sudworth-lee-4a1060220">
@@ -75,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 </li>
             </ul>
         </section>
-        <img src="/assets/images/discoball.gif" alt="" id="discoBall">
         `;
     }
 });

@@ -3,18 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Scripts-->
-    <script type="module" src="/assets/scripts/templates.js"></script>
-    <script src="/assets/script/buttons.js"></script>
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!--Scripts & styles-->
+        <script type="module" src="/assets/scripts/templates.js"></script>
+        <script defer src="/assets/scripts/buttons.js"></script>
+        <link rel="stylesheet" href="/assets/styles/style.css">
+        <link rel="stylesheet" href="/assets/styles/animations.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Fictional perfume one-pager</title>
 </head>
 <body>
-    <header></header>
+    <header>
+    </header>
+    <section style="padding-left: 5%;">
+        <h1>Creating a one page website for a fictional product</h1>
+    <p>
+        Hello! This is all about how I made a small showcase for a fictional perfume brand and product.
+    </p>
+    <br>
+    <a href="https://portfoliosmall.netlify.app/">Click here to visit this project.</a>
+    </section>
+    <br>
+    <!--for people to access these quickly!-->
+    <section>
+        <button class="collapsible">View contents</button>
+        <div class="collapsiblecontent">
+            <ul class="nodeco">
+                <br>
+                <li>
+                    <a href="#createbrand">1. Creating the brand</a>
+                </li>
+                <br>
+                <li>
+                    <a href="bgresearch">1.1. Background Research</a>
+                </li>
+                <br>
+                <li>
+                    <a href="#mindmap">1.2. Mindmapping</a>
+                </li>
+                <br>
+                <li>
+                    <a href="#makebottle">1.3. Making the bottle</a>
+                </li>
+                <br>
+                <li>
+                    <a href="#designsite">2. Designing the website</a>
+                </li>
+                <br>
+                <li>
+                    <a href="#webcode">3. Coding</a>
+                </li>
+                <br>
+            </ul>
+        </div>
+    </section>
+    
+    <main>
+        <section>
+            <h2 id="createbrand">Creating the brand</h2>
+                <h3 id="bgresearch">Background Research</h3>
+                <h3 id="mindmap">Mindmapping</h3>
+                    <p>
+                        I began by making a mind map in PowerPoint using one of their built-in SmartArt design charts.
+                        This would include both the brand and the product being sold - I chose a perfume because I find there's a lot more room for displaying a product and descriptive language.
+                    </p>
+                    <p>
+                        Once done, I took the entire list and plugged it into chatgpt, asking for an image of the perfume, a description and a tagline.
+                    </p>
+                    <img src="assets/images/perfumetask/Chatgpt-perfume.png">
+                    <a href="https://chatgpt.com/c/67f9b546-d278-8013-861b-8539716aff21">Read the full conversation log here.</a>
+                <h3 id="makebottle">Making the bottle</h3>
+                    <section class="twocolumn">
+                        <div class="videocontainer">
+                            <iframe
+                                src="https://www.youtube.com/embed/aBfwpTwsOTw">
+                            </iframe> 
+                        </div>
+                        <div class="videocontainer">
+                            <iframe
+                                src="https://www.youtube.com/embed/8IWQJaOLQfY">
+                            </iframe>
+                        </div>
+                    </section>
+        </section>
+        <section>
+            <h2 id="designsite">Designing the website</h2>
+                <h3></h3>
+                <h3 id="papersk">Paper sketches</h3>
+                <h3 id="figmamove">Moving to Figma</h3>
+        </section>
+        <section>
+            <h2 id="webcode">Coding the website</h2>
+        </section>
+    </main>
     <footer></footer>
 </body>
 </html>

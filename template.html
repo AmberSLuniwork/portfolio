@@ -3,66 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Scripts-->
-    <script src="/assets/scripts/buttons.js"></script>
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!--Scripts & styles-->
+        <script defer src="/assets/scripts/buttons.js"></script>
+        <link rel="stylesheet" href="/assets/styles/style.css">
+        <link rel="stylesheet" href="/assets/styles/animations.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Maitree:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
     <title>Templates</title>
 </head>
 <body>
     <header>
-        <a id="logo" href="index.html">Amber <br> Sudworth</p></a>
-        <nav class="desktop-nav">
-            <ul class="nav-list">
+        <a id="logo" class="big-ish gradient nodeco" href="index.html">Amber Sudworth</a>
+        <nav id="desktopnav" class="big-ish">
+            <ul class="nodecolist">
                 <li>
                     <a href=aboutme.html>About</a>
                 </li>
-                <li class="dropdown">
-                    <p class="dropbutton">Projects&#x25BE</p>
-                    <div class="dropcontent">
-                        <a href="largetask.html">Aurum Landscapes</a>
-                        <br>
-                        <a href="smalltask.html">Fictional perfume</a>
-                        <br>
-                        <a href="endyearproject.html"> Final year project</a>
-                    </div>
+                <li>
+                    <a href="projects.html">Projects</a>
                 </li>
                 <li>
-                    <a href=contact.html>Contact me</a>
+                    <button id="contactbutton"><a href="contact.html">Contact</a></button>
                 </li>
             </ul>
         </nav>
-        <button class="mobile-nav-toggle" id="hamburger">&#x25C2;</button>
-        <nav class="mobile-nav">
-            <ul class="nodeco">
+        <button id="hamburger" class="big">&#9776;</button>
+        <nav class="mobilenav">
+            <button id="removenav" class="huge">&times;</button>
+            <ul class="nodecolist big">
                 <li>
                     <a href="contact.html">Contact</a>
                 </li>
                 <li>
-                    <a href="aboutme.html">About</a>
+                    <a href="projects.html">Projects</a>
                 </li>
                 <li>
-                    <h2>Projects</h2>
-                    <section>
-                        <a href="largetask.html">Aurum Landscapes</a>
-                        <br>
-                        <a href="smalltask.html">Fictional perfume</a>
-                        <br>
-                        <a href="endyearproject.html"> Final year project</a>
-                    </section>
+                    <a href="aboutme.html">About</a>
                 </li>
             </ul>
         </nav>
     </header>
+    <!--Footer!-->
     <footer>
-        <section class="links">
-            <ul class="footer-nav">
-                <li>
-                    <a href=#logo>Back to top</a>
-                </li>
+        <section>
+            <ul class="nodecolist">
+                <li class="big-ish">Quick Links</li>
                 <li>
                     <a href=aboutme.html>About</a>
                 </li>
@@ -74,22 +62,21 @@
                 </li>
             </ul>
         </section>
-        <section class="links">
-            <ul class="footer-nav">
+        <section>
+            <ul class="nodecolist">
                 <li>
-                    <p>Made by Amber Sudworth © 2025.</p> <br>
+                    <a href=#logo class="big-ish">&#11205 Back to top</a>
+                </li>
+                <li>
+                    Made by Amber Sudworth © 2025.
                 </li>
                 <li>
                     <a href="https://www.linkedin.com/in/amber-sudworth-lee-4a1060220">
                         <img src="assets/images/InBug-White.png" id="linkedin">
                     </a>
                 </li>
-                <li id="partytime">
-                    Party mode?
-                </li>
             </ul>
         </section>
-        <img src="/assets/images/discoball.gif" alt="" id="discoBall">
     </footer>
 </body>
 </html>
