@@ -8,10 +8,11 @@
         <script defer src="/assets/scripts/buttons.js"></script>
         <link rel="stylesheet" href="/assets/styles/style.css">
         <link rel="stylesheet" href="/assets/styles/animations.css">
+        <link rel="stylesheet" href="/assets/styles/mobile.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Templates</title>
 </head>
 <body>
@@ -22,8 +23,14 @@
                 <li>
                     <a href=aboutme.html>About</a>
                 </li>
-                <li>
-                    <a href="projects.html">Projects</a>
+                <li class="dropdown">
+                    <button class="droptoggle">Projects</button>
+                    <div class="dropcontent">
+                        <a href="projectpages/endyearproject.html">Student Magazine</a>
+                        <a href="projectpages/largetask.html">Aurum Landscapes</a>
+                        <a href="projectpages/smalltask.html">Fictional Perfume</a>
+                        <a href="archive.html">Archive</a>
+                    </div>
                 </li>
                 <li>
                     <button id="contactbutton"><a href="contact.html">Contact</a></button>
@@ -46,6 +53,9 @@
             </ul>
         </nav>
     </header>
+</section>
+    
+    <section style="height: 100vh;"></section>
     <!--Footer!-->
     <footer>
         <section>

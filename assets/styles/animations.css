@@ -1,29 +1,70 @@
-#logo:hover{
-    transform: scale(1.05);
-    transition: all 0.1s 0s ease;
+html{
+    scroll-behavior: smooth;
 }
-#desktopnav li:hover, #desktopnav li a:hover:not(#contactbutton a){
-    color: #D40C72;
+#picturehover{
+    display: none;
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+}
+/*hovers*/
+#desktopnav .dropcontent a:hover {
+    text-shadow: none !important;
+    background-color: #ffe0cb;
+}
+#desktopnav li a:hover:not(#contactbutton a), #desktopnav .droptoggle:hover{
+    color: #760066;
     transform: scale(1.1);
-    transition: all 0.1s 0s ease;
-    text-shadow: #17002fad 0px 0px 10px;
+    transition: all 0.1s ease;
+    text-shadow: #17002f3d 0px 0px 10px;
+}
+.project:hover{
+    transform: scale(102%);
+    box-shadow: 0 8px 32px 0 #490c328f;
+    transition: 0.1s ease-in-out;
+}
+.project a:hover{
+    h3, p{
+        display: block;
+        opacity: 100%;
+        transition: 0.1s ease-in-out;
+    }   
+}
+.contactform input:hover, .contactform textarea:hover{
+    box-shadow: #17002f3d 0px 0px 10px;
+}
+#hamburger:hover{
+    transform: scale(1.1);
+    transition: all 0.1s ease;
 }
 #contactbutton:hover{
     box-shadow: #17002fad 0px 0px 10px;
     background-image:linear-gradient(
         to left,
-        #660076,
-        #D40C72,
-        #f87016,
-        #D40C72,
-        #660076
+        #17002F,
+        #760066,
+        #DD544F,
+        #760066,
+        #17002F
     );
     transition:transform .2s ease-in-out;
     animation: gradientMove 2s linear infinite;
 }
+body:has(#pictureofme:hover) #picturehover {
+    display: block;
+    opacity: 1;
+    transition: 1s ease;
+    transition-delay: 1000ms;
+}
+#pictureofme:hover{
+    transform: scale(1.1) translateY(-1.1vh);
+    box-shadow: #17002f3d 0px 0px 10px;
+    transition: all .25s ease;
+}
+
 .gradient{
     transition:transform .2s ease-in-out;
-    animation: gradientMove 20s linear infinite;
+    animation: gradientMove 10s linear infinite;
 }
 
 @keyframes gradientMove{
@@ -32,5 +73,31 @@
     }
     100%{
         background-position: 0% 50%
+    }
+}
+.slideleft{
+    animation: slideleft .5s ease-in-out;
+}
+.slidedown{
+    animation: slidedown .5s ease;
+}
+@keyframes slideleft{
+    0%{
+        transform: translateX(-20%);
+        opacity: 0;
+    }
+    100%{
+        transform:translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slidedown{
+    from{
+        transform: translateY(-50%);
+        opacity: 0;
+    } 
+    to {
+        transform:translateY(0);
+        opacity: 1;
     }
 }

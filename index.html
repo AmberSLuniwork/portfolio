@@ -9,21 +9,103 @@
     <script defer src="/assets/scripts/buttons.js"></script>
     <link rel="stylesheet" href="/assets/styles/style.css">
     <link rel="stylesheet" href="/assets/styles/animations.css">
+    <link rel="stylesheet" href="/assets/styles/mobile.css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Shrikhand&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Home</title>
 </head>
 <body>
-    <section class="banner">
-        <header class="homeheader"></header>
-        <h1 class="huge gradient" style="margin-top: 15%;">Amber Sudworth</h1>
-        <p class="big-ish">Hello! I'm a Web Design and Development graduate with a love for fun front end design.</p>
+    <header class="slidedown"></header>
+
+    <section class="bigtextcontainer slideleft">
+        <p id="pageheader" class="big-ish">Hello, I'm</p>
+        <h1 id="bigtext" class="huge gradient">Amber Sudworth!</h1>
+        <p class="big-ish slideleft" style="text-align: right; margin-top: 6vh;"> I'm a Web Design and Development graduate with a love for fun, clean design.</p>
+        
     </section>
-    <br>
-    <section style="height: 400px;">
-    </section>
+
+    <main>
+        <!--About me section-->
+        <section class="noglass">
+            <h2 id="aboutmeheader" style="width: 100%;">About Me</h2>
+            <div id="aboutmecontainer">
+                    <div class="aboutmetiles small">
+                    <img id="pictureofme" src="assets/images/profile-blank-m.webp" style="width: 75%; height: auto;">
+                    <div id="picturehover" class="glass">
+                        <p>Yes, that's me!</p>
+                    </div>
+                    <article>
+                        <img src="assets/images/icons/charm_map-pin.png"> <p>Based in <strong>Southport, Merseyside</strong></p>
+                    </article>
+                    <article>
+                        <img src="assets/images/icons/charm_graduate-cap.png"> <p>Graduated from Edge Hill University in <strong>2025</strong></p>
+                    </article>
+                    <article>
+                        <img src="assets/images/icons/terminal.256x220.png"> <p>Experienced in HTML, CSS, and Javascript</p>
+                    </article>
+                    <article>
+                        <img src="assets/images/icons/people.256x256.png"> <p>Confident in UX design and research</p>
+                    </article>
+                    <!--<article class="glass">
+                        <img src="assets/images/icons/download.207x256.png"> <p>Download my CV here.</p>
+                    </article>-->
+                </div>
+                <article style="flex-basis:75%;">
+                    <p>I'm so epic and cool, please hire me</p>
+                </article>
+            </div>
+            
+        </section>
+
+        <section id="projectcontainer" class="noglass">
+            <!--I want to make this into a bento box style grid.-->
+            <div class="projectcontainer noglass">
+                <div class="glass project pc0">
+                    <h2 id="projectheader" style="width: 100%;">What I've been up to</h2>
+                </div>
+                <div class="glass project pc2">
+                    <a href="projectpages/endyearproject.html">
+                        <h3>Final Project</h3>
+                        <p></p>
+                    </a>
+                </div>
+                <div class="glass project pc3">
+                    <a href="projectpages/smalltask.html">
+                        <h3>Ambrosia</h3>
+                        <p>A one page website made for a fictional perfume and brand.</p>
+                    </a>
+                </div>
+                <div class="glass project pc4">
+                    <a href="projectpages/largetask.html">
+                        <h3>Aurum Landscapes</h3>
+                        <p>A multi-page website for a luxury landscaping company, based on a real, anonymised, client brief.</p>
+                    </a>
+                </div>
+                <div class="glass project pc5">
+                    <a href="archive.html">
+                        <h3 style="text-align: center;">Archive</h3>
+                        <p>See all of my projects in one place.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contactcontainer">
+            <h2 class="huge" style="text-align: center;">Let's talk!</h2>
+            <p style="margin: 25px;">Feel free to send a message any time - I'm just an email away.</p>
+            <form class="contactform glass" name="contact" method="post" netlify>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                <label for="inputemail">Your Email:</label>
+                <input type="email" id="inputemail" required>
+                <label for="message">Your Message:</label>
+                <textarea name="message" style="resize: none;" rows="" required></textarea>
+            </form>
+        </section>
+    </main>
+
     <footer></footer>
 </body>
 </html>
